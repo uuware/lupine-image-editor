@@ -5,6 +5,11 @@
       "index": "web/src/index.tsx",
       "html": "web/src/index.html",
       "outdir": "/"
+    },
+    {
+      "index": "web/src/lupine-image-editor/index.tsx",
+      "html": "web/src/lupine-image-editor/index.html",
+      "outdir": "/lupine-image-editor"
     }
   ],
   "apiEntryPoint": "api/src/index.ts",
@@ -13,6 +18,11 @@
       "type": "web",
       "from": "web/assets",
       "to": "assets"
+    },
+    {
+      "type": "web",
+      "from": "web/src/lupine-image-editor/404.html",
+      "to": "lupine-image-editor/404.html"
     },
     {
       "type": "data",

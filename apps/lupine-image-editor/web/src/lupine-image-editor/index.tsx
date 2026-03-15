@@ -1,22 +1,22 @@
 // css order is important
-import './styles/global.css';
-import './styles/app.css';
+import '../styles/global.css';
+import '../styles/app.css';
 
 import {
   bindRouter,
-  bindGlobalStyle,
-  debugWatch,
-  isFrontEnd,
   PageRouter,
-  webEnv,
-  bindLang,
   bindTheme,
+  bindLang,
   setDefaultPageTitle,
+  isFrontEnd,
+  debugWatch,
+  webEnv,
+  bindGlobalStyle,
 } from 'lupine.components';
-import { baseCss } from './styles/base-css';
-import { themes } from './styles/theme';
-import { AppResponsiveFrame } from './frames/app-responsive-frame';
-import { HomePage } from './pages/home-page';
+import { themes } from '../styles/theme';
+import { baseCss } from '../styles/base-css';
+import { AppResponsiveFrame } from '../frames/app-responsive-frame';
+import { HomePage } from '../pages/home-page';
 
 if (isFrontEnd() && webEnv('NODE_ENV', '') === 'development') {
   debugWatch(webEnv('API_PORT', 0));
@@ -29,6 +29,7 @@ setDefaultPageTitle('Lupine Image Editor');
 
 const pageRouter = new PageRouter();
 pageRouter.setFramePage({ component: AppResponsiveFrame, placeholderClassname: 'user-page-placeholder' });
+pageRouter.setSubDir('/lupine-image-editor');
 pageRouter.use('*', HomePage);
 
 bindRouter(pageRouter);
